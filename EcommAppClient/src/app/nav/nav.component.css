@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Header Section */
@@ -19,9 +19,30 @@ body{
 nav{
     flex: 1;
     text-align: right;
+    font-weight: 600;
+}
+
+/* #register-p{
+    font-size: 3650px;
+} */
+
+/* p a:hover {
+    text-decoration: none;
+} */
+.reg-link{
+    text-decoration: none;
+    font-size: 500px;
+    background-color: #ff523b;
 }
 
 #log-in{
+    margin-left: 20px;
+    overflow: hidden;
+    border: none;     
+    outline: none;  
+}
+
+#log-out{
     margin-left: 20px;
     overflow: hidden;
     border: none;     
@@ -115,3 +136,7 @@ nav ul li a{
 .row .btn-cart:hover{ 
     background: #563434;
 }
+
+/* .modal-header { 
+    justify-content: center;
+} */

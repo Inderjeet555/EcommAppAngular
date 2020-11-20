@@ -48,7 +48,7 @@ namespace API.Controllers
             var createdUser = await _repo.Register(userToCreate, userRegisterDto.Password);
                     
                     
-            return Ok("Okay");
+            return Ok();
         }
 
         [HttpPost("Login")]

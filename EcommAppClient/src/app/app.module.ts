@@ -14,6 +14,10 @@ import { ContactComponent } from './contact/contact.component';
 import { AccountComponent } from './account/account.component';
 import { CartComponent } from './cart/cart.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -25,16 +29,24 @@ import { ModalModule } from 'ngx-bootstrap/modal';
       AboutComponent,
       ContactComponent,
       AccountComponent,
-      CartComponent
+      CartComponent,
+      ModalContentComponent
    ],
    imports: [
       BrowserModule,
+      HttpClientModule,
       AppRoutingModule,
+      BrowserAnimationsModule,
       ModalModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      ReactiveFormsModule,
+      FormsModule,
+      BsDatepickerModule.forRoot()
    ],
    entryComponents: [ModalContentComponent],
-   providers: [],
+   providers: [
+      DatePipe
+   ],
    bootstrap: [
       AppComponent
    ]
