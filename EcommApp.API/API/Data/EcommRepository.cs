@@ -20,10 +20,14 @@ namespace API.Data
         {
             _context.Add(entity);
         }
+        
+        public async Task<Product> GetProduct(long id)
+        {
+            return await _context.Products.Where(x => x.ProductId == id).FirstOrDefaultAsync();
+        }
 
         public async  Task<List<Product>> GetProducts()
-        {
-            //throw new System.NotImplementedException();
+        {            
             var products = await _context.Products.ToListAsync();
                 return products;
         }        

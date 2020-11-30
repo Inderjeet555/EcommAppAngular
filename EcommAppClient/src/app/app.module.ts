@@ -1,3 +1,4 @@
+import { ProductDetailResolver } from './_resolvers/productsDetail.resolver';
 import { ProductResolver } from './_resolvers/products.resolver';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatePipe } from '@angular/common';
+import { ProductDetailComponent } from './productDetail/productDetail.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { DatePipe } from '@angular/common';
       ContactComponent,
       AccountComponent,
       CartComponent,
-      ModalContentComponent
+      ModalContentComponent,
+      ProductDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -44,10 +47,13 @@ import { DatePipe } from '@angular/common';
       FormsModule,
       BsDatepickerModule.forRoot()
    ],
-   entryComponents: [ModalContentComponent],
+   entryComponents: [
+      ModalContentComponent
+   ],
    providers: [
       DatePipe,
-      ProductResolver
+      ProductResolver,
+      ProductDetailResolver
    ],
    bootstrap: [
       AppComponent

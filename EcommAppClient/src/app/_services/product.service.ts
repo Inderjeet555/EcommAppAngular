@@ -23,4 +23,12 @@ getProducts() {
   );
 }
 
+getProduct(id: number) {
+  return this.http.get<Product>(this.baseUrl + 'home'  + '/GetProductdetail/' + id).pipe(
+    map(response => {
+      return response;
+    })
+  );
+}
+
 }

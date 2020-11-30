@@ -42,5 +42,18 @@ namespace API.Controllers
 
             return Ok(productsToReturn);
         }
+
+        [HttpGet("GetProductDetail/{id}")]
+        public async Task<IActionResult> GetProduct(long id) 
+        {
+            var product = await _repo.GetProduct(id);
+
+            if (product == null)
+                return BadRequest("No product found");
+
+            var productToReturn = _mapper.Map<ProductsForListDto>(product);
+
+            return Ok(productToReturn);
+        }
     }
 }
