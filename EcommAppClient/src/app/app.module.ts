@@ -1,3 +1,4 @@
+import { ProductResolver } from './_resolvers/products.resolver';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -45,7 +46,8 @@ import { DatePipe } from '@angular/common';
    ],
    entryComponents: [ModalContentComponent],
    providers: [
-      DatePipe
+      DatePipe,
+      ProductResolver
    ],
    bootstrap: [
       AppComponent

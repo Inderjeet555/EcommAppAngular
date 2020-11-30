@@ -1,0 +1,52 @@
+<div class="row-1">
+            <div class="col-2">
+                <h1>Give your workout <br>A new style!</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quae doloremque cum et, <br> maxime facere nobis.</p>
+                <a href="#" class="btn">Explore Now &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="../assets/image1.png" alt="img-1">
+            </div>
+</div>
+
+<!-- Featured Categories -->
+
+<div class="categories">
+    <div class="small-container">    
+    <div class="row">
+        <div class="col-3">
+            <img src="../assets/category-1.jpg" alt="first-1">
+        </div>
+        <div class="col-3">
+            <img src="../assets/category-2.jpg" alt="first-2">
+        </div>
+        <div class="col-3">
+            <img src="../assets/category-3.jpg" alt="first-3">
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Featured Categories End -->
+
+<!-- Featured Products -->
+
+
+<div class="small-container">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+        <div *ngFor="let prod of products" class="col-4">            
+           <img src="../assets/product-1.jpg" alt="img-prod">
+            <h4>{{prod.productName}}</h4>
+            <!-- <p>{{prod.prodDescription}}</p>            -->
+           <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>               
+            </div>                     
+           <p class="align-center">{{prod.productPrice | currency:'INR'}}</p>
+        </div>
+    </div>
+</div>

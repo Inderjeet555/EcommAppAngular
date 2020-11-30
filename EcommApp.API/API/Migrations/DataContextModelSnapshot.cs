@@ -89,6 +89,9 @@ namespace API.Migrations
                     b.Property<string>("ProdDescription")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ProdImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 

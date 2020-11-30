@@ -1,3 +1,4 @@
+import { ProductResolver } from './_resolvers/products.resolver';
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -9,10 +10,10 @@ import { ProductsComponent } from './products/products.component';
 
 
 export const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: HomeComponent, resolve: {products: ProductResolver}},
     {
-        path: '',
-     //   runGuardsAndResolvers: 'always',
+       path: '',
+     //  runGuardsAndResolvers: 'always',
        // canActivate: [AuthGuard],
         children: [
             {path: 'about', component: AboutComponent},

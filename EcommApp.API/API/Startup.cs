@@ -32,6 +32,8 @@ namespace API
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(typeof(EcommRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IEcommRepository, EcommRepository>();
+           // services.AddAuthentication(JwtBearerDefaults)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

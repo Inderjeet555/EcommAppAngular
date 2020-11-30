@@ -15,7 +15,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class NavComponent implements OnInit {
   bsModalRef: BsModalRef;

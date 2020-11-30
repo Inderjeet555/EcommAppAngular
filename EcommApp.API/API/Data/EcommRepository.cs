@@ -1,4 +1,9 @@
-using API.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System;
+using API.Models;
 
 namespace API.Data
 {
@@ -15,5 +20,12 @@ namespace API.Data
         {
             _context.Add(entity);
         }
+
+        public async  Task<List<Product>> GetProducts()
+        {
+            //throw new System.NotImplementedException();
+            var products = await _context.Products.ToListAsync();
+                return products;
+        }        
     }
 }

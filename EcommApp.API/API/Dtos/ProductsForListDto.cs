@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
-namespace API.Models
+namespace API.Dtos
 {
-    public class Product
+    public class ProductsForListDto
     {
         public long ProductId { get; set; }
         public long ProductPrice { get; set; }
@@ -11,6 +9,5 @@ namespace API.Models
         public long UserId { get; set; }
         public string ProdDescription { get; set; }
         public decimal prodWeight { get; set; }
-        public ICollection<Order> Orders { get; set; }        
-    }    
+    }
 }

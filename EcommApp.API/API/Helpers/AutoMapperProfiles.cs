@@ -11,6 +11,8 @@ namespace API.Helpers
         {
             CreateMap<UserRegisterDto, User>();
             CreateMap<User, UserForListDto>();
+            CreateMap<Product, ProductsForListDto>();
+            //     .ForMember(p => p.Orders, opt => opt.Ignore());
         }
     }
 }
