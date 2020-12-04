@@ -9,5 +9,7 @@ namespace API.Data
          void Add<T>(T entity) where T: class;
          Task<List<Product>> GetProducts();
          Task<Product> GetProduct(long id);
+         Task<bool> SaveToCart(Cart cart);
+         Task<int> GetCartCount(int userId);
     }
 }

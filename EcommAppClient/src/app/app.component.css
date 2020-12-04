@@ -177,6 +177,8 @@ nav ul li a{
     min-width: 200px;
     margin-bottom: 50px;
     transition:  transform 0.5s ease;
+    cursor: pointer;
+    outline: none;
 }
 
 .col-4 img{
@@ -214,7 +216,7 @@ h4{
 }
 
 .col-4 p{
-    font-size: 14px;
+    font-size: 14px;   
 }
 
 .col-4:hover{

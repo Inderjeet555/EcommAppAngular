@@ -21,6 +21,6 @@ export class ProductDetailResolver implements Resolve<Product> {
                 this.router.navigate(['']);
                 return of(null);
             })
-        )
+        );
     }
 }

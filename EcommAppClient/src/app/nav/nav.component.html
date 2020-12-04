@@ -13,7 +13,7 @@
                   <li><a [routerLink]="['/account']">Account</a></li>
               </ul>
           </nav>
-          <a [routerLink]="['/cart']"><img src="../assets/cart.png" width="30px" height="30px" alt="cart-img" ></a>          
+          <a [routerLink]="['/cart']"><img src="../assets/cart.png" width="30px" height="30px" alt="cart-img" > <span>{{1+2}}</span></a>     
           <button type="button" *ngIf="!loggedIn()" class="btn btn-primary" id="log-in" (click)="openModalWithComponent()">Log In</button>
           <button type="button" *ngIf="loggedIn()" class="btn btn-primary" id="log-out" (click)="loggedOut()">Log Out</button>
           <div class="menu-container">

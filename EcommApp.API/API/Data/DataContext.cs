@@ -14,11 +14,15 @@ namespace API.Data
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) 
         {
             modelBuilder.Entity<Product>()
-                    .HasKey(x => x.ProductId);           
+                    .HasKey(x => x.ProductId);    
+
+            modelBuilder.Entity<Cart>()
+                    .HasKey(x => x.CartId);
         }
 
     }

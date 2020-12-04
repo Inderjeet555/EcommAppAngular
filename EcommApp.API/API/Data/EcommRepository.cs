@@ -20,7 +20,12 @@ namespace API.Data
         {
             _context.Add(entity);
         }
-        
+
+        public async Task<int> GetCartCount(int userId)
+        {
+            return await _context.Carts.CountAsync(x => x.UsersId == userId);
+        }
+
         public async Task<Product> GetProduct(long id)
         {
             return await _context.Products.Where(x => x.ProductId == id).FirstOrDefaultAsync();
@@ -30,6 +35,13 @@ namespace API.Data
         {            
             var products = await _context.Products.ToListAsync();
                 return products;
-        }        
+        }
+
+        public async Task<bool> SaveToCart(Cart cart)
+        {
+           await this._context.Carts.AddAsync(cart);
+           await this._context.SaveChangesAsync();
+                return true;
+        }
     }
 }

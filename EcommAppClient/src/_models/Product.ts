@@ -3,7 +3,7 @@ export interface Product {
     productPrice: number;
     prodImage: string;
     productName: string;
-    UserId: number;
+    userId: number;
     prodDescription: string;
     prodWeight: number;
 }

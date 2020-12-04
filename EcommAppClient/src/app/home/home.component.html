@@ -35,7 +35,7 @@
 <div class="small-container">
     <h2 class="title">Featured Products</h2>
     <div class="row">
-        <div *ngFor="let prod of products" class="col-4" [routerLink]="['/productDetail', prod.productId]" routerLinkActive="router-link-active" >            
+        <div *ngFor="let prod of products" class="col-4" [routerLink]="['/productDetail', prod.productId]">            
            <img src="../assets/product-1.jpg" alt="img-prod">
             <h4>{{prod.productName}}</h4>
             <!-- <p>{{prod.prodDescription}}</p>            -->
@@ -47,6 +47,7 @@
                 <i class="fa fa-star-o" aria-hidden="true"></i>               
             </div>                     
            <p class="align-center">{{prod.productPrice | currency: 'INR'}}</p>
+           <a [routerLink]="['']" (click)='$event.stopPropagation()'  (click)="AddTocart(prod.productId, prod.userId)" class="btn-cart">Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </div>
     </div>
 </div>

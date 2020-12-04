@@ -23,7 +23,8 @@ export const appRoutes: Routes = [
             {path: 'account', component: AccountComponent},
             {path: 'products', component: ProductsComponent},
             {path: 'cart', component: CartComponent},
-            {path: 'productDetail/:id', component: ProductDetailComponent, resolve: {product: ProductDetailResolver}}
+            {path: 'productDetail/:id', component: ProductDetailComponent, resolve: {product: ProductDetailResolver}},
+            {path: 'cart', component: CartComponent, resolve: {cart: ProductDetailResolver}}
         ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'}
