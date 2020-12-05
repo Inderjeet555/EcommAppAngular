@@ -45,6 +45,10 @@ export class NavComponent implements OnInit {
     this.authService.loggedOut();
     this.alertify.success('Logged Out Successfully');
   }
+
+  getItemCount(itemCount) {
+    console.log(itemCount);
+  }
 }
 
 

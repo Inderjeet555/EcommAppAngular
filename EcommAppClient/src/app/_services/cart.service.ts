@@ -17,8 +17,8 @@ addToCart(cart: Cart) {
   return this.http.post(this.baseUrl + 'saveToCart', cart, {observe: 'response'});
 }
 
-getCartCount(userId: number) {
-  return this.http.get(this.baseUrl + 'GetCartCount/' + userId);
+ getCartCount(userId: number) {
+   return this.http.get(this.baseUrl + 'GetCartCount/' + userId);
 }
 
 }
