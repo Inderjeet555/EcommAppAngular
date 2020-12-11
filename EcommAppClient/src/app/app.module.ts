@@ -21,7 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatePipe } from '@angular/common';
 import { ProductDetailComponent } from './productDetail/productDetail.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthService } from './_services/auth.service';
 
+
+
+export function tokenGetter() {
+   return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -45,7 +52,12 @@ import { ProductDetailComponent } from './productDetail/productDetail.component'
       RouterModule.forRoot(appRoutes),
       ReactiveFormsModule,
       FormsModule,
-      BsDatepickerModule.forRoot()
+      BsDatepickerModule.forRoot(),
+      JwtModule.forRoot({
+         config: {
+            tokenGetter,
+          }
+      })
    ],
    entryComponents: [
       ModalContentComponent
@@ -53,7 +65,8 @@ import { ProductDetailComponent } from './productDetail/productDetail.component'
    providers: [
       DatePipe,
       ProductResolver,
-      ProductDetailResolver
+      ProductDetailResolver,
+      AuthService
    ],
    bootstrap: [
       AppComponent

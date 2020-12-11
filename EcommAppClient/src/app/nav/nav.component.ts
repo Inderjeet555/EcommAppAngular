@@ -10,6 +10,7 @@ import { AlertifyService } from '../_services/alertify.service';
 import { Router } from '@angular/router';
 import { style } from '@angular/animations';
 import { DatePipe } from '@angular/common';
+import { DataService } from '../_services/data.service';
 
 
 @Component({
@@ -19,11 +20,13 @@ import { DatePipe } from '@angular/common';
 })
 export class NavComponent implements OnInit {
   bsModalRef: BsModalRef;
+  itemCount = 0;
 
-  constructor(private modalService: BsModalService, private authService: AuthService, private alertify: AlertifyService) { }
+  constructor(private modalService: BsModalService, private authService: AuthService, private alertify: AlertifyService,
+              private data: DataService) { }
 
   ngOnInit() {
-
+    this.data.currentCount.subscribe(itemCount => this.itemCount = itemCount);
   }
 
   openModalWithComponent() {
