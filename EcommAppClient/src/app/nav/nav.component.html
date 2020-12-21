@@ -14,7 +14,7 @@
               </ul>
           </nav>
           <a [routerLink]="['/cart']"><img src="../assets/cart.png" width="30px" height="30px" alt="cart-img" > <span class="item-Count">{{itemCount}}</span></a>     
-          <button type="button" *ngIf="!loggedIn()" class="btn btn-primary" id="log-in" (click)="openModalWithComponent()">Log In</button>
+          <button type="button" *ngIf="!loggedIn()" class="btn btn-primary" id="log-in" (click)="openLoginModalDialog()">Log In</button>
           <button type="button" *ngIf="loggedIn()" class="btn btn-primary" id="log-out" (click)="loggedOut()">Log Out</button>
           <div class="menu-container">
               <div class="menu-icon-1"></div>

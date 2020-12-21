@@ -28,11 +28,17 @@ login(model: any) {
         localStorage.setItem('token', user.token);
         localStorage.setItem('user', JSON.stringify(user));
         this.decodedToken = this.jwtHelper.decodeToken(user.token);
-       // this.decodedToken.next(this.jwtToken);
         console.log(this.decodedToken);
       }
     })
   );
+}
+
+getTokenFromLocalStorage(): number {
+  if (this.loggedIn()) {
+    this.decodedToken = this.jwtHelper.decodeToken(localStorage.getItem('token')).nameid;
+    return this.decodedToken;
+  }
 }
 
 // setTokenGlobally(decodedToken: any) {

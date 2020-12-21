@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailResolver } from './_resolvers/productsDetail.resolver';
+import { NavComponent } from './nav/nav.component';
 
 
 export const appRoutes: Routes = [
@@ -22,9 +23,13 @@ export const appRoutes: Routes = [
             {path: 'contact', component: ContactComponent},
             {path: 'account', component: AccountComponent},
             {path: 'products', component: ProductsComponent},
-            {path: 'cart', component: CartComponent},
+           // {path: 'cart', component: CartComponent},
             {path: 'productDetail/:id', component: ProductDetailComponent, resolve: {product: ProductDetailResolver}},
-            {path: 'cart', component: CartComponent, resolve: {cart: ProductDetailResolver}}
+            {path: 'cart', component: CartComponent,
+            // resolve: {cart: ProductDetailResolver}
+        },
+      //  {path: 'login', component: ModalContentComponent},
+        {path: 'nav', component: NavComponent}
         ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'}

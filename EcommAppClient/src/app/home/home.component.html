@@ -47,7 +47,7 @@
                 <i class="fa fa-star-o" aria-hidden="true"></i>               
             </div>                     
            <p class="align-center">{{prod.productPrice | currency: 'INR'}}</p>
-           <a [routerLink]="['']" (click)='$event.stopPropagation()'  (click)="AddTocart(prod.productId, cart.UsersId)" class="btn-cart">Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+           <a [routerLink]="['']" (click)='$event.stopPropagation()'  (click)="AddTocart(prod.productId)" class="btn-cart">Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </div>
     </div>
 </div>

@@ -4,11 +4,14 @@ using API.Dtos;
 using API.Data;
 using AutoMapper;
 using API.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
+    [Authorize]
     public class CartController: ControllerBase
     {
         private  IMapper _mapper; 
@@ -24,6 +27,9 @@ namespace API.Controllers
         [HttpPost("saveToCart")]
         public async Task<IActionResult> saveToCart(CartDto cartDto) 
         {
+            if (cartDto.UsersId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
             if (cartDto == null)
                 return BadRequest("Error saving product!");
 
