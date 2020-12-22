@@ -41,10 +41,6 @@ getTokenFromLocalStorage(): number {
   }
 }
 
-// setTokenGlobally(decodedToken: any) {
-//   this.decodedToken.next(decodedToken);
-// }
-
 loggedIn() {
   const token = localStorage.getItem('token');
   return !this.jwtHelper.isTokenExpired(token);
@@ -54,7 +50,6 @@ loggedOut() {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
   this.dataService.changeItemCount(0);
- // this.decodedToken.next(null);
 }
 
 registerUser(user: User) {

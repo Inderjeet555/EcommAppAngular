@@ -48,7 +48,6 @@ export class ModalComponent implements OnInit {
       this.alertify.error('Invalid Credentials');
     },
       () => {
-      // this.router.navigate(['']);
       }
     );
   }
@@ -92,5 +91,4 @@ export class ModalComponent implements OnInit {
       dateOfBirth: ['', [Validators.required]]
     });
   }
-
 }
